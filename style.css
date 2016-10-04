@@ -14,6 +14,7 @@
     list-style: none;
     transition: width 1s, height 1s, transform 1s;
     transform-style: preserve-3d;
+
 }
 .card:hover {
     width: 400px;
@@ -37,6 +38,7 @@
     font-size: 140px;
     position: absolute;
     backface-visibility: hidden;
+    overflow: hidden;
 }
 .card .front {
     background: #ccc;
