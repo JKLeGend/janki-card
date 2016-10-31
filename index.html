@@ -6,13 +6,85 @@
   <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-<h1>Developer's Janki Card</h1>
-<div id="grid-container">
-  <ul class="container"></ul>
-</div>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://api.trello.com/1/client.js?key=186a85bd4aa2a21068b3ebb9fafd69f4"></script>
+<main class="main m-scene">
+  <div class="home-page m-scene scene_element" id="home-page" >
+    <header class="header scene_element scene_element--fadein">
+      <div class="title">
+        <p class="let">Let's</p>
+        <p class="janki">Janki</p>
+        <p class="man">To Be A Better Man.</p>
+      </div>
+
+      <div class="join scene_element scene_element--fadein">
+        <img class="janki-png" src="janki.png" alt="">
+        <div class="tw-us">
+          <p class="tw-developer">TW Developer</p>
+          <p class="join-us">Join us</p>
+        </div>
+      </div>
+      <nav class="navigator scene_element scene_element--fadeinup">
+        <ul>
+          <li class="item"><a class="selected" href="">Today</a></li>
+          <li class="item"><a href="">This week</a></li>
+          <li class="item"><a href="">This month</a></li>
+          <li class="item"><a href="">Theme</a></li>
+          <li class="item"><a href="">Member</a></li>
+        </ul>
+
+      </nav>
+    </header>
+    <section class="cards-container scene_element scene_element--fadeinup">
+      <table class="cards-table">
+        <tr class="cards-row">
+          <td class="cards-green">
+            <p class="card" onclick="openDetails();"> </p>
+          </td>
+          <td class="cards-grey">
+            <p class="card" onclick="openDetails();"> </p>
+          </td>
+          <td class="cards-green">
+            <p class="card" onclick="openDetails();"> </p>
+          </td>
+        </tr>
+        <tr class="cards-row">
+          <td class="cards-white">
+            <p class="card" onclick="openDetails();"> </p>
+          </td>
+          <td class="cards-green">
+            <p class="card" onclick="openDetails();"> </p>
+          </td>
+          <td class="cards-grey">
+            <p class="card" onclick="openDetails();"> </p>
+          </td>
+        </tr>
+
+      </table>
+
+    </section>
+  </div>
+
+  <div class="page-mask" id="page-mask"></div>
+
+  <div class="detail-page hide m-scene scene_element" id="detail-page">
+    <img class="close-detail" src="cross.svg" alt="" onclick="closeDetails();"/>
+    <div class="d-card scene_element scene_element--fadeinup" id="d-card">
+      <div class="front-container">
+        <p class="front"> </p>
+      </div>
+      <div class="back-container">
+        <p class="back"> </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
+<script type="application/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="application/javascript" src="details.js"></script>
+<script type="application/javascript" src="util.js"></script>
+<!--<script src="https://api.trello.com/1/client.js?key=186a85bd4aa2a21068b3ebb9fafd69f4"></script>-->
 <script type="application/javascript" src="card.js"></script>
+<link href='//cdn.webfont.youziku.com/webfonts/nomal/26591/46993/5810ce64f629dc1884b9dc8e.css' rel='stylesheet' type='text/css' />
 </body>
 </html>
 
