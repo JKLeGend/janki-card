@@ -1,61 +1,357 @@
-h1 {
-    text-align: center;
-    margin-top: 80px;
-    font-size: 60px;
-    font-family: fantasy;
-    color: #aaa;
+body {
+    margin: 0;
 }
-.container {
-    width: 996px;
+
+a {
+    color: #53585F;
+}
+
+.main {
+    position: relative;
+    color: #53585F;
+}
+
+/** home page */
+.main .home-page {
+    position: absolute;
+    width: 100%;
+    height: 800px;
+}
+/** header */
+.header {
+    height: 40%;
+    font-family:'Akzidenz-Grotes6a6cf7ff867df';
+}
+
+.header .title {
+    margin: 3% 0 0 8%;
+    display: inline-block;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.header .title p {
+    margin: 0;
+    line-height: 45px;
+}
+
+.header .title .man {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 15px;
+}
+
+.header .join {
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin: 5% 5% 0 0;
+    width: 12%;
+    border: 1px solid;
+}
+
+.janki-png {
+    width: 24%;
+    display: inline-block;
+    margin: 5% 10% 0 10%;
+}
+
+.tw-us{
+    position: absolute;
+    top: 10%;
+    display: inline-block;
+}
+
+.tw-developer {
+    margin: 0;
+    font-size: 14px;
+}
+.join-us {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+/** navigator */
+.header .navigator {
+   text-align: center;
+   font-size: 24px;
+   margin-top: 5%;
+   border-top: 1px solid;
+   border-bottom: 1px solid;
+}
+
+.header .navigator ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header .navigator ul li {
+    display: inline-block;
+    width: 19.5%;
     margin: 0 auto;
-    margin-top: 0px;
-    padding: 50px 0;
-    /*border: 1px solid #ccc;*/
-    perspective: 800px;
-    overflow: hidden;
+    border-right: 1px solid;
+}
+
+.header .navigator ul li:last-child {
+    border-right: none;
+}
+
+.header .navigator ul li a {
+    width: 20%;
+    line-height: 2;
+    text-decoration:none;
+}
+
+.selected {
+    color: #009193;
+}
+
+/** cards section */
+.cards-container {
+    height: 60%;
+    width: 100%;
+}
+
+.cards-table {
+    height: 100%;
+    width: 100%;
+    border-spacing: 0;
+}
+.cards-row {
+    table-layout: fixed;
+    height: 50%;
+    width: 100%;
+    box-sizing: border-box;
 }
 .card {
-    width: 200px;
-    height: 200px;
-    margin: 20px;
-    float: left;
+    height: 100%;
+    margin: 0;
+    padding: 5%;
+    /*overflow: scroll;*/
+}
+
+table tr td {
+    width: 33.3%;
+    padding: 0;
+    text-align: left;
+}
+table tr .cards-green {
+    background-color: #009193;
+    color: white;
+}
+table tr .cards-grey {
+     background-color: #53585F;
+     color: white;
+}
+table tr .cards-white {
+    background-color: #EBEBEB;
+    color: #53585F;
+}
+
+.page-mask{
+    z-index: 1;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/**detail page*/
+.main .detail-page {
+    z-index: 2;
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: rgba(255,255,255,1);
+    width: 50%;
+    height: 800px;
+
+    perspective: 800px;
+}
+
+.close-detail {
+    width: 5%;
+    height: 5%;
+    margin: 10% 45%;
+
+    -webkit-transition: -webkit-transform .5s ease-out;
+    -moz-transition: -moz-transform .5s ease-out;
+    -o-transition: -o-transform .5s ease-out;
+    -ms-transition: -ms-transform .5s ease-out;
+}
+
+.close-detail:hover {
+    cursor: pointer;
+
+    -webkit-transform: rotateZ(90deg);
+    -moz-transform: rotateZ(90deg);
+    -o-transform: rotateZ(90deg);
+    -ms-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+}
+
+.main .detail-page .d-card {
+    background-color: #53585F;
+    width: 60%;
+    height: 70%;
+    padding: 0 5%;
+    margin: 0 auto;
     list-style: none;
     transition: width 1s, height 1s, transform 1s;
     transform-style: preserve-3d;
-
 }
-.card:hover {
-    width: 400px;
-    height: 400px;
-    font-size: 16px;
-    position: relative;
-    top: 0;
-    left: 0;
-}
-.card:hover div {
-    font-size: 30px;
-}
-.card div {
+.main .detail-page .d-card div {
     display: block;
     height: 100%;
     width: 100%;
     color: white;
     text-align: center;
     font-weight: bold;
-    font-size: 140px;
-    position: absolute;
+    font-size: 40px;
+    word-break: break-all;
+    word-wrap:break-word;
+
     backface-visibility: hidden;
     overflow: hidden;
 }
-.card .front {
-    background: #ccc;
+.main .detail-page .d-card .front-container {
+    background: #53585F;
 }
-.card .back {
+
+.main .detail-page .d-card .back-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     color: white;
     background: cadetblue;
     transform: rotateY( 180deg );
 }
-.card.flipped {
 
+.front {
+    height:85%;
+    /*overflow: scroll;*/
+}
+
+.back {
+    height:85%;
+    /*overflow: scroll;*/
+}
+
+.main .detail-page .d-card.flipped {
     transform: rotateY( 180deg );
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes detail-fadeOutRight {
+    0% {
+        opacity: 0;
+        transform: none;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+@keyframes detail-fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes home-fadeInLeft {
+    0% {
+        opacity: 0;
+        right: 50%;
+    }
+
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes home-fadeOutLeft {
+    0% {
+        opacity: 0;
+        right: 0;
+    }
+
+    100% {
+        opacity: 1;
+        right: 50%;
+    }
+}
+
+/*
+ * CSS Page Transitions
+ */
+
+.m-scene .scene_element {
+    animation-duration: 0.25s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+
+}
+
+.m-scene .scene_element--fadein {
+    animation-name: fadeIn;
+}
+
+.m-scene .scene_element--fadeinup {
+    animation-name: fadeInUp;
+}
+
+.m-scene .scene_element--detail-fadeinright {
+    animation-name: detail-fadeInRight;
+}
+
+.m-scene .scene_element--detail-fadeoutright {
+    animation-name: detail-fadeOutRight;
+}
+
+.m-scene .scene_element--home-fadeinleft {
+    animation-name: home-fadeInLeft;
+}
+
+.m-scene .scene_element--home-fadeoutleft {
+    animation-name: home-fadeOutLeft;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
 }
