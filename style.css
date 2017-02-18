@@ -20,7 +20,7 @@ a {
 /** header */
 .header {
     height: 40%;
-    font-family:'Akzidenz-Grotes6a6cf7ff867df';
+    font-family: 'Fjalla One', sans-serif;
 }
 
 .header .title {
@@ -321,7 +321,6 @@ table tr .cards-white {
     animation-duration: 0.25s;
     transition-timing-function: ease-in;
     animation-fill-mode: both;
-
 }
 
 .m-scene .scene_element--fadein {
